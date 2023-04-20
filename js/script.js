@@ -25,4 +25,5 @@ function visor(digitado,operador){
   const op=ultimo==='*'||ultimo==='-'||ultimo==='+'||ultimo===','||ultimo==='a'||ultimo==='='?true:false;
     if(operador&&vs.value.length===0||operador&&op||digitado==='a'||digitado==='='){switch(digitado){case 'a':if(vs.value.length){vs.value=vs.value.substring(vs.value.length-1, -1)};break;case '=':calcular()};return}
       vs.value+=digitado
+      vs.scrollLeft+=vs.scrollWidth;
 };
