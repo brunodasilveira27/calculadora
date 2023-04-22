@@ -1,7 +1,7 @@
 const range=document.querySelector('input[type="range"]');
 function alterarTema(tema,auto){
   let fundo,texto,itens,botao,sombra,ativo;
-    switch(tema){
+    switbbch(tema){
       case '1':
       /*light theme*/
         fundo='#ffffff';texto='#000000';itens='#eeeeee';botao='#B0C4DE';sombra='#000000';ativo='#778899';
