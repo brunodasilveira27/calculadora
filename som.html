@@ -1,0 +1,62 @@
+<!doctype html>
+  <html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maxinum-scale=1.0">
+          <title>Som JavaScript</title>
+            <style>
+                *{
+                  margin:0;padding:0;box-sizing:border-box;outline:none;resize:none;user-select:none;}
+                  html,body{
+                    width:100vw;
+                    background:#121212;
+                    color:#eee;
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:center;
+                    align-items:center;
+                  }
+                  button{
+                    width:90%;
+                    max-width:230px;
+                    height:35px;
+                    background:#015777;
+                    color:#fff;
+                    border:0;
+                    margin-top:100px;
+                    box-shadow:0 3px 0 #000;
+                  }
+                  #start{
+                    display:block;
+                  }
+                  #stop{
+                    display:none;
+                  }
+              </style>
+      </head>
+    <body>
+      <button onclick="c_som(this)" id="start">Começar som</button>
+      <button onclick="p_som(this)" id="stop">Parar som</button>
+      <script>
+          const audio=new AudioContext();
+          function esconder(el){
+            el.style.display='none';
+          }
+          function mostrar(el){
+            el.style.display='block';
+          }
+          function c_som(el){
+            esconder(el)
+            mostrar(document.querySelector('#stop'));
+              oscillator=audio.createOscillator();
+              oscillator.connect(audio.destination);
+              oscillator.start();
+          }
+          function p_som(el){
+            esconder(el)
+            mostrar(document.querySelector('#start'));
+              oscillator.stop();
+          }
+        </script>
+  </body>
+</html>
